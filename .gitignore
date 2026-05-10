@@ -20,11 +20,13 @@ dist/
 build/
 .next/
 
-# Python (in case used)
+# Python
 __pycache__/
 *.pyc
 .venv/
 venv/
+.ipynb_checkpoints/
+*.egg-info/
 
 # IDE
 .idea/

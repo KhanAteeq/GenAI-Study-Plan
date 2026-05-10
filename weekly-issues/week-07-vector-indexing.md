@@ -29,3 +29,6 @@ Create a real vector index in Azure AI Search and load embedded chunks into it.
 ## 📦 Deliverable
 - [ ] `notes/week-07-vector-indexing.md`
 - [ ] Index schema JSON in repo
+
+## 🐍 Python-Lite (Optional, 1 hr)
+- [ ] Run [python-side/03-langchain-hello-rag.ipynb](../python-side/03-langchain-hello-rag.ipynb)

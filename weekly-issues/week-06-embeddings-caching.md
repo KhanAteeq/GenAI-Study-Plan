@@ -27,3 +27,6 @@ Generate embeddings for chunks at scale, with caching to control cost.
 ## 📦 Deliverable
 - [ ] Cached embeddings file committed (sample subset only)
 - [ ] `notes/week-06-embeddings-caching.md`
+
+## 🐍 Python-Lite (Optional, 1 hr)
+- [ ] Run [python-side/02-openai-api.ipynb](../python-side/02-openai-api.ipynb) — same call in C# vs Python

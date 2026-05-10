@@ -28,3 +28,6 @@ Extract clean text from PDFs using Azure Document Intelligence and chunk it inte
 ## 📦 Deliverable
 - [ ] `notes/week-05-document-processing.md`
 - [ ] Sample chunked output in repo
+
+## 🐍 Python-Lite (Optional, 1 hr)
+- [ ] Run [python-side/01-syntax-basics.ipynb](../python-side/01-syntax-basics.ipynb)

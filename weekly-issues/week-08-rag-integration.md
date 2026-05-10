@@ -28,3 +28,6 @@ Wire everything together into a complete RAG pipeline that answers questions wit
 ## 📦 Deliverable
 - [ ] Working RAG in `code/month-2-rag-pipeline/`
 - [ ] `deliverables/week-08-rag-eval.md` with test queries + results
+
+## 🐍 Python-Lite (Optional, 1 hr)
+- [ ] Run [python-side/04-huggingface-embeddings.ipynb](../python-side/04-huggingface-embeddings.ipynb)

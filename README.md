@@ -36,6 +36,7 @@ A self-directed 12-week journey to transition into a **Generative AI Engineer** 
 | [resources/](resources/) | Cheatsheets, diagrams, saved articles |
 | [deliverables/](deliverables/) | Weekly outputs (reports, screenshots) |
 | [weekly-issues/](weekly-issues/) | Pre-written GitHub issue bodies |
+| [python-side/](python-side/) | Optional 4-hr Python-Lite track (notebooks) |
 | [.github/ISSUE_TEMPLATE/](.github/ISSUE_TEMPLATE/) | Issue templates for new tasks/notes |
 
 ---

@@ -13,7 +13,7 @@ A self-directed 12-week journey to transition into a **Generative AI Engineer** 
 | Metric | Value |
 |---|---|
 | ✅ Weeks Complete | 0 / 12 |
-| ⏱️ Hours Logged | 0 / 150 |
+| ⏱️ Hours Logged | 3 / 150 |
 | 🚀 Projects Shipped | 0 / 3 |
 | 📚 Notes Written | 0 |
 | 🐙 Commits | 0 |

@@ -1,0 +1,41 @@
+# Secrets — keep out of git
+.env
+*.env
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.key
+*.pem
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Node / React
+node_modules/
+dist/
+build/
+.next/
+
+# Python (in case used)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / cache
+*.log
+.cache/
+embeddings-cache/

@@ -1,0 +1,60 @@
+name: Update Progress
+
+on:
+  issues:
+    types: [closed, reopened, opened, labeled, unlabeled]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday 06:00 UTC
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute progress
+        id: progress
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const weekly = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: 'weekly', per_page: 100
+            });
+            const closed = weekly.filter(i => i.state === 'closed').length;
+            const total = Math.max(weekly.length, 12);
+
+            const commits = await github.paginate(github.rest.repos.listCommits, {
+              owner, repo, per_page: 100
+            });
+
+            core.setOutput('weeks_done', closed);
+            core.setOutput('weeks_total', total);
+            core.setOutput('commits', commits.length);
+
+      - name: Update README
+        run: |
+          WEEKS_DONE="${{ steps.progress.outputs.weeks_done }}"
+          WEEKS_TOTAL="${{ steps.progress.outputs.weeks_total }}"
+          COMMITS="${{ steps.progress.outputs.commits }}"
+
+          sed -i "s|✅ Weeks Complete | .* / .* |✅ Weeks Complete | ${WEEKS_DONE} / ${WEEKS_TOTAL} |" README.md || true
+          sed -i "s|🐙 Commits | .* |🐙 Commits | ${COMMITS} |" README.md || true
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            git add README.md
+            git commit -m "chore: auto-update progress"
+            git push
+          else
+            echo "No README changes."
+          fi
